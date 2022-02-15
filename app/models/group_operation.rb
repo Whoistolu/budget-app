@@ -1,0 +1,2 @@
+class GroupOperation < ApplicationRecord
+end
