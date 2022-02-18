@@ -1,9 +1,6 @@
 <p style="color: green"><%= notice %></p>
 
-<div class="text-end">
-  <%= link_to "New group", new_group_path, class: "btn btn-primary" %>
-</div>
-<h1>Groups</h1>
+<h1 class="text-center text-primary">Groups</h1>
 <div id="groups">
   <% @groups.each do |group| %>
     <%= render group %>
@@ -11,4 +8,7 @@
       <%= link_to "Show this group", group %>
     </p>
   <% end %>
+  <div class="text-center">
+  <%= link_to "New group", new_group_path, class: "btn btn-primary btn-lg btn-block" %>
+</div>
 </div>

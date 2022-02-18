@@ -13,3 +13,13 @@
  *= require_tree .
  *= require_self
  */
+.icon-image {
+  width: 100%;
+  height: 90px;
+}
+
+.group-class {
+  display: flex;
+  align-items: center;
+
+}

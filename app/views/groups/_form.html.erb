@@ -11,17 +11,17 @@
     </div>
   <% end %>
 
-  <div>
+  <div class="input-group my-2">
     <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
+    <%= form.text_field :name, class: "form-control" %>
   </div>
 
-  <div>
+  <div class="input-group my-2">
     <%= form.label :icon, style: "display: block" %>
-    <%= form.text_field :icon %>
+    <%= form.text_field :icon, class: "form-control" %>
   </div>
 
-  <div>
+  <div class="input-group my-2">
     <%= form.submit %>
   </div>
 <% end %>
