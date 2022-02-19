@@ -14,7 +14,7 @@ A Ruby on Rails capstone project that is about a mobile web application where yo
 
 Design Image  |  Design Image
 :-------------------------:|:-------------------------:
-![3](img/3.png) | ![1](img/1.png) | ![2](img/2.png)
+![1](img/1.png) | ![2](img/2.png) | ![3](img/3.png) | ![4](img/4.png) | ![5](img/5.png) | ![6](img/6.png)
 
 ## Live Demo
 

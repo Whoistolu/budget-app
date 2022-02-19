@@ -1,18 +1,21 @@
 <p style="color: green"><%= notice %></p>
 
 <h1 class="text-center text-primary">Groups</h1>
+ <%= link_to "Home", user_path(@user.id), class: "btn btn-primary my-3" %>
 <div id="groups">
   <% @groups.each do |group| %>
-    <%= render group %>
+    <%= link_to operations_path do %>
+      <%= render group %>
+    <%end%>
     <p>
       <%= link_to "Show this group", group %>
     </p>
   <% end %>
   <div class="text-center">
-    <%= link_to "New group", new_group_path, class: "btn btn-primary btn-lg btn-block" %>
+    <%= link_to "New group", new_group_path, class: "btn btn-primary w-100" %>
   </div>
   <div class="text-center">
-    <%= link_to "Sign Out", new_group_path, class: "btn btn-primary btn-lg btn-block my-3 px-4" %>
+    <%= button_to "sign-out", destroy_user_session_path, method: :delete, class: "btn btn-danger w-100 my-3"  %>
   </div>
 
 </div>
