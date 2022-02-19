@@ -1,0 +1,127 @@
+  [1m[35m (388.0ms)[0m  [1m[35mDROP DATABASE IF EXISTS "budget_app2_test"[0m
+  [1m[35m (2410.7ms)[0m  [1m[35mCREATE DATABASE "budget_app2_test" ENCODING = 'unicode'[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "group_operations" CASCADE[0m
+  [1m[35m (211.2ms)[0m  [1m[35mCREATE TABLE "group_operations" ("id" bigserial primary key, "operation_id" bigint NOT NULL, "group_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (76.2ms)[0m  [1m[35mCREATE INDEX "index_group_operations_on_group_id" ON "group_operations" ("group_id")[0m
+  [1m[35m (66.1ms)[0m  [1m[35mCREATE INDEX "index_group_operations_on_operation_id" ON "group_operations" ("operation_id")[0m
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "groups" CASCADE[0m
+  [1m[35m (187.0ms)[0m  [1m[35mCREATE TABLE "groups" ("id" bigserial primary key, "name" character varying, "icon" character varying, "user_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (77.0ms)[0m  [1m[35mCREATE INDEX "index_groups_on_user_id" ON "groups" ("user_id")[0m
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "operations" CASCADE[0m
+  [1m[35m (175.9ms)[0m  [1m[35mCREATE TABLE "operations" ("id" bigserial primary key, "name" character varying, "amount" character varying, "user_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (54.6ms)[0m  [1m[35mCREATE INDEX "index_operations_on_user_id" ON "operations" ("user_id")[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (118.6ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "name" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp(6), "remember_created_at" timestamp(6), "confirmation_token" character varying, "confirmed_at" timestamp(6), "confirmation_sent_at" timestamp(6))[0m
+  [1m[35m (88.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (66.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35m (20.9ms)[0m  [1m[35mALTER TABLE "group_operations" ADD CONSTRAINT "fk_rails_fb657e05fc"
+FOREIGN KEY ("group_id")
+  REFERENCES "groups" ("id")
+[0m
+  [1m[35m (9.6ms)[0m  [1m[35mALTER TABLE "group_operations" ADD CONSTRAINT "fk_rails_01befca93a"
+FOREIGN KEY ("operation_id")
+  REFERENCES "operations" ("id")
+[0m
+  [1m[35m (10.2ms)[0m  [1m[35mALTER TABLE "groups" ADD CONSTRAINT "fk_rails_5e78cd340a"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  [1m[35m (10.0ms)[0m  [1m[35mALTER TABLE "operations" ADD CONSTRAINT "fk_rails_63fbf4e94e"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  [1m[35m (175.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (16.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20220217103105)[0m
+  [1m[35m (10.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20220215091822),
+(20220215094951),
+(20220215101714),
+(20220215105559);
+
+[0m
+  [1m[35m (153.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.0ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "test"], ["created_at", "2022-02-19 12:34:55.979866"], ["updated_at", "2022-02-19 12:34:55.979866"]]
+  [1m[36mTRANSACTION (10.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.8ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "343f0b64c8751798297e973ae87e579536b2a224"], ["created_at", "2022-02-19 12:34:56.004332"], ["updated_at", "2022-02-19 12:34:56.004332"]]
+  [1m[36mTRANSACTION (9.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "john@test.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at", "email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "confirmation_token", "confirmed_at", "confirmation_sent_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["name", "john"], ["created_at", "2022-02-19 12:34:56.415639"], ["updated_at", "2022-02-19 12:34:56.415639"], ["email", "john@test.com"], ["encrypted_password", "$2a$04$vK/nS1r6gZK3Xq/wKq8riegvne5/unVzvLaKX8yAmElhckox9gTWG"], ["reset_password_token", nil], ["reset_password_sent_at", nil], ["remember_created_at", nil], ["confirmation_token", nil], ["confirmed_at", nil], ["confirmation_sent_at", nil]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mGroup Create (0.6ms)[0m  [1m[32mINSERT INTO "groups" ("name", "icon", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "sports"], ["icon", nil], ["user_id", 1], ["created_at", "2022-02-19 12:34:56.480327"], ["updated_at", "2022-02-19 12:34:56.480327"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (13.6ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "john@test.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at", "email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "confirmation_token", "confirmed_at", "confirmation_sent_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["name", "john"], ["created_at", "2022-02-19 12:34:56.651923"], ["updated_at", "2022-02-19 12:34:56.651923"], ["email", "john@test.com"], ["encrypted_password", "$2a$04$E6FRdlbkpuSNjOAGVhRUVe9tcvqVEkNNazZQAB5rnN6wxKewh7W9a"], ["reset_password_token", nil], ["reset_password_sent_at", nil], ["remember_created_at", nil], ["confirmation_token", nil], ["confirmed_at", nil], ["confirmation_sent_at", nil]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mGroup Create (0.3ms)[0m  [1m[32mINSERT INTO "groups" ("name", "icon", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "sports"], ["icon", nil], ["user_id", 2], ["created_at", "2022-02-19 12:34:56.653919"], ["updated_at", "2022-02-19 12:34:56.653919"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "john@test.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at", "email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "confirmation_token", "confirmed_at", "confirmation_sent_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["name", "john"], ["created_at", "2022-02-19 12:35:11.660169"], ["updated_at", "2022-02-19 12:35:11.660169"], ["email", "john@test.com"], ["encrypted_password", "$2a$04$9KKhBlfsQZ.TF0ukAI3/4egQxqiMfL/OTDh/KNS16W.gX9EYZuo3y"], ["reset_password_token", nil], ["reset_password_sent_at", nil], ["remember_created_at", nil], ["confirmation_token", nil], ["confirmed_at", nil], ["confirmation_sent_at", nil]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "john@test.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at", "email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "confirmation_token", "confirmed_at", "confirmation_sent_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["name", "john"], ["created_at", "2022-02-19 12:35:11.696791"], ["updated_at", "2022-02-19 12:35:11.696791"], ["email", "john@test.com"], ["encrypted_password", "$2a$04$bRY36a5EiF3WvqsJIfhut.3PdybTiEJzFGnW7D1NRZe3CBdex/CYK"], ["reset_password_token", nil], ["reset_password_sent_at", nil], ["remember_created_at", nil], ["confirmation_token", nil], ["confirmed_at", nil], ["confirmation_sent_at", nil]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "john@test.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at", "email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "confirmation_token", "confirmed_at", "confirmation_sent_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["name", "john"], ["created_at", "2022-02-19 12:35:11.724225"], ["updated_at", "2022-02-19 12:35:11.724225"], ["email", "john@test.com"], ["encrypted_password", "$2a$04$Zn5VLRPvwYU.7dzcN3e6r..Okqy2iefFmWLEzdV.AQ2LC6Q65y.IW"], ["reset_password_token", nil], ["reset_password_sent_at", nil], ["remember_created_at", nil], ["confirmation_token", nil], ["confirmed_at", nil], ["confirmation_sent_at", nil]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "john@test.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at", "email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "confirmation_token", "confirmed_at", "confirmation_sent_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["name", "john"], ["created_at", "2022-02-19 12:35:11.729046"], ["updated_at", "2022-02-19 12:35:11.729046"], ["email", "john@test.com"], ["encrypted_password", "$2a$04$9GovOMMzJ16xb8tbPsO4/Osi3cdE2U6C4TqIJefwsNRyZWgCwssfW"], ["reset_password_token", nil], ["reset_password_sent_at", nil], ["remember_created_at", nil], ["confirmation_token", nil], ["confirmed_at", nil], ["confirmation_sent_at", nil]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "john@test.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at", "email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "confirmation_token", "confirmed_at", "confirmation_sent_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["name", "john"], ["created_at", "2022-02-19 12:35:28.322725"], ["updated_at", "2022-02-19 12:35:28.322725"], ["email", "john@test.com"], ["encrypted_password", "$2a$04$bSPFKNPhO/UgDcAmcjQN..ZcRgr92IeeCE.GCIcdlQsY0loUzkAy."], ["reset_password_token", nil], ["reset_password_sent_at", nil], ["remember_created_at", nil], ["confirmation_token", nil], ["confirmed_at", nil], ["confirmation_sent_at", nil]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mOperation Create (0.7ms)[0m  [1m[32mINSERT INTO "operations" ("name", "amount", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "wall street land"], ["amount", "2000000"], ["user_id", 7], ["created_at", "2022-02-19 12:35:28.346837"], ["updated_at", "2022-02-19 12:35:28.346837"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "john@test.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at", "email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "confirmation_token", "confirmed_at", "confirmation_sent_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["name", "john"], ["created_at", "2022-02-19 12:35:28.373358"], ["updated_at", "2022-02-19 12:35:28.373358"], ["email", "john@test.com"], ["encrypted_password", "$2a$04$nGpBQ.RHbuHrjIt7Ys392Oq1NdfS9aqovxkyoKZGjyo6MrEV.nltq"], ["reset_password_token", nil], ["reset_password_sent_at", nil], ["remember_created_at", nil], ["confirmation_token", nil], ["confirmed_at", nil], ["confirmation_sent_at", nil]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mOperation Create (0.3ms)[0m  [1m[32mINSERT INTO "operations" ("name", "amount", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "wall street land"], ["amount", "2000000"], ["user_id", 8], ["created_at", "2022-02-19 12:35:28.375091"], ["updated_at", "2022-02-19 12:35:28.375091"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "john@test.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at", "email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "confirmation_token", "confirmed_at", "confirmation_sent_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["name", "john"], ["created_at", "2022-02-19 12:35:28.379530"], ["updated_at", "2022-02-19 12:35:28.379530"], ["email", "john@test.com"], ["encrypted_password", "$2a$04$gfVfvwhPIja8LpG.Za36m.us2H9o525Nvv/fi2iTwP4f26JV6.gZa"], ["reset_password_token", nil], ["reset_password_sent_at", nil], ["remember_created_at", nil], ["confirmation_token", nil], ["confirmed_at", nil], ["confirmation_sent_at", nil]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mOperation Create (0.4ms)[0m  [1m[32mINSERT INTO "operations" ("name", "amount", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "wall street land"], ["amount", "2000000"], ["user_id", 9], ["created_at", "2022-02-19 12:35:28.381057"], ["updated_at", "2022-02-19 12:35:28.381057"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
