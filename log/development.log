@@ -7678,3 +7678,258 @@ Processing by GroupsController#index as HTML
 Completed 200 OK in 24ms (Views: 12.8ms | ActiveRecord: 2.1ms | Allocations: 5380)
 
 
+Started GET "/users/sign_up" for 127.0.0.1 at 2022-02-19 16:35:20 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/groups
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 197ms (ActiveRecord: 133.9ms | Allocations: 3811)
+
+
+Started GET "/groups" for 127.0.0.1 at 2022-02-19 16:35:20 +0100
+Processing by GroupsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering groups/index.html.erb within layouts/application
+  [1m[36mGroup Load (0.5ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/views/groups/index.html.erb:6
+  Rendered groups/_group.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered groups/_group.html.erb (Duration: 0.1ms | Allocations: 23)
+  Rendered groups/_group.html.erb (Duration: 0.1ms | Allocations: 23)
+  Rendered groups/index.html.erb within layouts/application (Duration: 3.3ms | Allocations: 1166)
+  Rendered partial/_nav.html.erb (Duration: 0.1ms | Allocations: 12)
+  Rendered layout layouts/application.html.erb (Duration: 6.9ms | Allocations: 3276)
+Completed 200 OK in 12ms (Views: 7.1ms | ActiveRecord: 0.8ms | Allocations: 5408)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2022-02-19 16:35:31 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/groups
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 5ms (ActiveRecord: 0.2ms | Allocations: 1555)
+
+
+Started GET "/groups" for 127.0.0.1 at 2022-02-19 16:35:31 +0100
+Processing by GroupsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering groups/index.html.erb within layouts/application
+  [1m[36mGroup Load (0.5ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/views/groups/index.html.erb:6
+  Rendered groups/_group.html.erb (Duration: 0.2ms | Allocations: 24)
+  Rendered groups/_group.html.erb (Duration: 0.1ms | Allocations: 23)
+  Rendered groups/_group.html.erb (Duration: 0.1ms | Allocations: 23)
+  Rendered groups/index.html.erb within layouts/application (Duration: 5.3ms | Allocations: 1167)
+  Rendered partial/_nav.html.erb (Duration: 0.1ms | Allocations: 12)
+  Rendered layout layouts/application.html.erb (Duration: 9.6ms | Allocations: 3268)
+Completed 200 OK in 16ms (Views: 9.7ms | ActiveRecord: 0.9ms | Allocations: 5408)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-02-19 16:35:41 +0100
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/groups
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 5ms (ActiveRecord: 0.6ms | Allocations: 1555)
+
+
+Started GET "/groups" for 127.0.0.1 at 2022-02-19 16:35:41 +0100
+Processing by GroupsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering groups/index.html.erb within layouts/application
+  [1m[36mGroup Load (0.3ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/views/groups/index.html.erb:6
+  Rendered groups/_group.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered groups/_group.html.erb (Duration: 0.1ms | Allocations: 23)
+  Rendered groups/_group.html.erb (Duration: 0.1ms | Allocations: 23)
+  Rendered groups/index.html.erb within layouts/application (Duration: 4.3ms | Allocations: 1166)
+  Rendered partial/_nav.html.erb (Duration: 0.1ms | Allocations: 12)
+  Rendered layout layouts/application.html.erb (Duration: 7.7ms | Allocations: 3268)
+Completed 200 OK in 15ms (Views: 8.2ms | ActiveRecord: 0.7ms | Allocations: 5395)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2022-02-19 16:35:53 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/groups
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 4ms (ActiveRecord: 0.3ms | Allocations: 1559)
+
+
+Started GET "/groups" for 127.0.0.1 at 2022-02-19 16:35:53 +0100
+Processing by GroupsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering groups/index.html.erb within layouts/application
+  [1m[36mGroup Load (0.4ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/views/groups/index.html.erb:6
+  Rendered groups/_group.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered groups/_group.html.erb (Duration: 0.1ms | Allocations: 23)
+  Rendered groups/_group.html.erb (Duration: 0.2ms | Allocations: 23)
+  Rendered groups/index.html.erb within layouts/application (Duration: 4.6ms | Allocations: 1166)
+  Rendered partial/_nav.html.erb (Duration: 0.1ms | Allocations: 12)
+  Rendered layout layouts/application.html.erb (Duration: 8.3ms | Allocations: 3261)
+Completed 200 OK in 15ms (Views: 8.9ms | ActiveRecord: 0.6ms | Allocations: 5393)
+
+
+Started GET "/groups" for 127.0.0.1 at 2022-02-19 16:35:56 +0100
+Processing by GroupsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering groups/index.html.erb within layouts/application
+  [1m[36mGroup Load (0.3ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/views/groups/index.html.erb:6
+  Rendered groups/_group.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered groups/_group.html.erb (Duration: 0.1ms | Allocations: 23)
+  Rendered groups/_group.html.erb (Duration: 0.1ms | Allocations: 23)
+  Rendered groups/index.html.erb within layouts/application (Duration: 3.1ms | Allocations: 1166)
+  Rendered partial/_nav.html.erb (Duration: 0.1ms | Allocations: 12)
+  Rendered layout layouts/application.html.erb (Duration: 7.5ms | Allocations: 3269)
+Completed 200 OK in 15ms (Views: 8.5ms | ActiveRecord: 0.6ms | Allocations: 5390)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2022-02-19 16:36:01 +0100
+Processing by Devise::SessionsController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 7ms (ActiveRecord: 0.3ms | Allocations: 1812)
+
+
+Started GET "/" for 127.0.0.1 at 2022-02-19 16:36:01 +0100
+Processing by GroupsController#index as TURBO_STREAM
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 438)
+
+
+Started GET "/users/3" for 127.0.0.1 at 2022-02-19 16:36:06 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms | Allocations: 429)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-02-19 16:36:06 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.4ms | Allocations: 133)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 4.3ms | Allocations: 1567)
+  Rendered partial/_nav.html.erb (Duration: 0.1ms | Allocations: 12)
+  Rendered layout layouts/application.html.erb (Duration: 10.2ms | Allocations: 3683)
+Completed 200 OK in 15ms (Views: 13.2ms | ActiveRecord: 0.0ms | Allocations: 4988)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2022-02-19 16:38:59 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 18)
+  Rendered devise/shared/_links.html.erb (Duration: 0.4ms | Allocations: 76)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 6.1ms | Allocations: 1187)
+  Rendered partial/_nav.html.erb (Duration: 0.2ms | Allocations: 12)
+  Rendered layout layouts/application.html.erb (Duration: 17.3ms | Allocations: 3301)
+Completed 200 OK in 21ms (Views: 18.6ms | ActiveRecord: 0.0ms | Allocations: 4043)
+
+
+Started POST "/users" for 127.0.0.1 at 2022-02-19 16:39:23 +0100
+Processing by Devise::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"David", "email"=>"david@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+[31mUnpermitted parameter: :password_confirmation. Context: { controller: Devise::RegistrationsController, action: create, request: #<ActionDispatch::Request:0x0000557f06ed8778>, params: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"David", "email"=>"david@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up", "controller"=>"devise/registrations", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "david@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (46.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at", "email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "confirmation_token", "confirmed_at", "confirmation_sent_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["name", "David"], ["created_at", "2022-02-19 15:39:23.791934"], ["updated_at", "2022-02-19 15:39:23.791934"], ["email", "david@gmail.com"], ["encrypted_password", "$2a$12$y5qLlKmA6WiJpCE7EEdGlOEdLx7rxL/Lt5VPLHwSxOM12n/G3Cp2u"], ["reset_password_token", nil], ["reset_password_sent_at", nil], ["remember_created_at", nil], ["confirmation_token", nil], ["confirmed_at", nil], ["confirmation_sent_at", nil]]
+  [1m[36mTRANSACTION (38.6ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://127.0.0.1:3000/users/4
+Completed 302 Found in 321ms (ActiveRecord: 85.5ms | Allocations: 5303)
+
+
+Started GET "/users/4" for 127.0.0.1 at 2022-02-19 16:39:23 +0100
+Processing by UsersController#show as TURBO_STREAM
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:62:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered users/show.html.erb within layouts/application (Duration: 1.0ms | Allocations: 425)
+  Rendered partial/_nav.html.erb (Duration: 0.1ms | Allocations: 12)
+  Rendered layout layouts/application.html.erb (Duration: 5.6ms | Allocations: 2543)
+Completed 200 OK in 10ms (Views: 6.3ms | ActiveRecord: 0.3ms | Allocations: 4649)
+
+
+Started GET "/groups" for 127.0.0.1 at 2022-02-19 16:39:31 +0100
+Processing by GroupsController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering groups/index.html.erb within layouts/application
+  [1m[36mGroup Load (0.6ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/views/groups/index.html.erb:6
+  Rendered groups/_group.html.erb (Duration: 0.3ms | Allocations: 24)
+  Rendered groups/_group.html.erb (Duration: 0.2ms | Allocations: 23)
+  Rendered groups/_group.html.erb (Duration: 1.0ms | Allocations: 23)
+  Rendered groups/index.html.erb within layouts/application (Duration: 11.9ms | Allocations: 1179)
+  Rendered partial/_nav.html.erb (Duration: 0.1ms | Allocations: 12)
+  Rendered layout layouts/application.html.erb (Duration: 20.6ms | Allocations: 3282)
+Completed 200 OK in 41ms (Views: 21.9ms | ActiveRecord: 1.4ms | Allocations: 5412)
+
+
+Started GET "/groups/new" for 127.0.0.1 at 2022-02-19 16:40:10 +0100
+Processing by GroupsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering groups/new.html.erb within layouts/application
+  Rendered groups/_form.html.erb (Duration: 2.2ms | Allocations: 680)
+  Rendered groups/new.html.erb within layouts/application (Duration: 2.7ms | Allocations: 768)
+  Rendered partial/_nav.html.erb (Duration: 0.1ms | Allocations: 12)
+  Rendered layout layouts/application.html.erb (Duration: 12.5ms | Allocations: 2877)
+Completed 200 OK in 19ms (Views: 13.4ms | ActiveRecord: 0.2ms | Allocations: 5031)
+
+
+Started POST "/groups" for 127.0.0.1 at 2022-02-19 16:40:22 +0100
+Processing by GroupsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "group"=>{"name"=>"David", "icon"=>"https://images.unsplash.com/photo-1640622842924-fb0017b9d786?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1472&q=80"}, "commit"=>"Create Group"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/groups_controller.rb:27:in `block in create'
+  [1m[36mGroup Create (3.1ms)[0m  [1m[32mINSERT INTO "groups" ("name", "icon", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "David"], ["icon", "https://images.unsplash.com/photo-1640622842924-fb0017b9d786?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1472&q=80"], ["user_id", 4], ["created_at", "2022-02-19 15:40:22.452179"], ["updated_at", "2022-02-19 15:40:22.452179"]]
+  ↳ app/controllers/groups_controller.rb:27:in `block in create'
+  [1m[36mTRANSACTION (13.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/groups_controller.rb:27:in `block in create'
+Redirected to http://127.0.0.1:3000/groups/4
+Completed 302 Found in 47ms (ActiveRecord: 17.6ms | Allocations: 4152)
+
+
+Started GET "/groups/4" for 127.0.0.1 at 2022-02-19 16:40:22 +0100
+Processing by GroupsController#show as TURBO_STREAM
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mGroup Load (0.2ms)[0m  [1m[34mSELECT "groups".* FROM "groups" WHERE "groups"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering groups/show.html.erb within layouts/application
+  Rendered groups/_group.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered groups/show.html.erb within layouts/application (Duration: 1.0ms | Allocations: 293)
+  Rendered partial/_nav.html.erb (Duration: 0.0ms | Allocations: 12)
+  Rendered layout layouts/application.html.erb (Duration: 3.7ms | Allocations: 2389)
+Completed 200 OK in 11ms (Views: 4.2ms | ActiveRecord: 0.7ms | Allocations: 6170)
+
+
+Started GET "/groups" for 127.0.0.1 at 2022-02-19 16:40:33 +0100
+Processing by GroupsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering groups/index.html.erb within layouts/application
+  [1m[36mGroup Load (0.5ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/views/groups/index.html.erb:6
+  Rendered groups/_group.html.erb (Duration: 0.2ms | Allocations: 24)
+  Rendered groups/_group.html.erb (Duration: 0.1ms | Allocations: 23)
+  Rendered groups/_group.html.erb (Duration: 0.1ms | Allocations: 23)
+  Rendered groups/_group.html.erb (Duration: 0.2ms | Allocations: 23)
+  Rendered groups/index.html.erb within layouts/application (Duration: 8.2ms | Allocations: 1315)
+  Rendered partial/_nav.html.erb (Duration: 0.1ms | Allocations: 12)
+  Rendered layout layouts/application.html.erb (Duration: 12.7ms | Allocations: 3415)
+Completed 200 OK in 22ms (Views: 13.1ms | ActiveRecord: 0.9ms | Allocations: 5545)
+
+
