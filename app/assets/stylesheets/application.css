@@ -14,12 +14,11 @@
  *= require_self
  */
 .icon-image {
-  width: 100%;
-  height: 90px;
+  width: auto;
+  height: 120px;
 }
 
 .group-class {
   display: flex;
-  align-items: center;
-
+  align-items: center
 }
