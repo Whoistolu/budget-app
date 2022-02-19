@@ -1,1 +1,1 @@
-json.partial! "operations/operation", operation: @operation
+json.partial! 'operations/operation', operation: @operation

@@ -6310,3 +6310,19 @@ Processing by GroupsController#index as HTML
 Completed 200 OK in 19ms (Views: 13.2ms | ActiveRecord: 0.6ms | Allocations: 6778)
 
 
+Started GET "/groups" for 127.0.0.1 at 2022-02-19 14:52:57 +0100
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by GroupsController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering groups/index.html.erb within layouts/application
+  [1m[36mGroup Load (0.8ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/views/groups/index.html.erb:5
+  Rendered groups/_group.html.erb (Duration: 1.4ms | Allocations: 213)
+  Rendered groups/_group.html.erb (Duration: 0.2ms | Allocations: 23)
+  Rendered groups/index.html.erb within layouts/application (Duration: 23.9ms | Allocations: 4392)
+  Rendered partial/_nav.html.erb (Duration: 0.5ms | Allocations: 147)
+  Rendered layout layouts/application.html.erb (Duration: 117.3ms | Allocations: 44472)
+Completed 200 OK in 318ms (Views: 129.8ms | ActiveRecord: 14.1ms | Allocations: 68245)
+
+

@@ -1,1 +1,1 @@
-json.array! @operations, partial: "operations/operation", as: :operation
+json.array! @operations, partial: 'operations/operation', as: :operation

@@ -1,1 +1,1 @@
-json.partial! "entities/entity", entity: @entity
+json.partial! 'entities/entity', entity: @entity

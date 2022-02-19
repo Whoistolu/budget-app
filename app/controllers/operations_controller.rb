@@ -1,6 +1,6 @@
 class OperationsController < ApplicationController
   before_action :authenticate_user!
-  load_and_authorize_resource 
+  load_and_authorize_resource
 
   # GET /operations or /operations.json
   def index
@@ -8,8 +8,7 @@ class OperationsController < ApplicationController
   end
 
   # GET /operations/1 or /operations/1.json
-  def show
-  end
+  def show; end
 
   # GET /operations/new
   def new
@@ -17,8 +16,7 @@ class OperationsController < ApplicationController
   end
 
   # GET /operations/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /operations or /operations.json
   def create
@@ -26,7 +24,7 @@ class OperationsController < ApplicationController
 
     respond_to do |format|
       if @operation.save
-        format.html { redirect_to operation_url(@operation), notice: "Operation was successfully created." }
+        format.html { redirect_to operation_url(@operation), notice: 'Operation was successfully created.' }
         format.json { render :show, status: :created, location: @operation }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -39,7 +37,7 @@ class OperationsController < ApplicationController
   def update
     respond_to do |format|
       if @operation.update(operation_params)
-        format.html { redirect_to operation_url(@operation), notice: "Operation was successfully updated." }
+        format.html { redirect_to operation_url(@operation), notice: 'Operation was successfully updated.' }
         format.json { render :show, status: :ok, location: @operation }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -53,19 +51,20 @@ class OperationsController < ApplicationController
     @operation.destroy
 
     respond_to do |format|
-      format.html { redirect_to operations_url, notice: "Operation was successfully destroyed." }
+      format.html { redirect_to operations_url, notice: 'Operation was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_operation
-      @operation = Operation.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def operation_params
-      params.require(:operation).permit(:name, :amount)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_operation
+    @operation = Operation.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def operation_params
+    params.require(:operation).permit(:name, :amount)
+  end
 end

@@ -1,1 +1,1 @@
-json.array! @entities, partial: "entities/entity", as: :entity
+json.array! @entities, partial: 'entities/entity', as: :entity
