@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Entities</h1>
+
+<div id="entities">
+  <% @entities.each do |entity| %>
+    <%= render entity %>
+    <p>
+      <%= link_to "Show this entity", entity %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New entity", new_entity_path %>

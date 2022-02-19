@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+<div class="apptitle text-center text-wrap fs-2 fw-bold"> Transcation ~ App</div>
+<h2 class="text-center">welcome <%= render @user %></h2>
+
+<div class=" d-grid gap-2">
+ <%= link_to "view groups", groups_path,  class: "btn btn-secondary" %>
+<%= link_to "Edit this user", edit_user_path(@user), class: "btn btn-primary" %>
+ <%= button_to "Delete my account", @user, method: :delete, class: "btn btn-danger w-100" %>
+<%= button_to "sign-out", destroy_user_session_path, method: :delete, class: "btn btn-danger w-100"  %>
+</div>
